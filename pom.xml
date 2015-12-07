@@ -35,10 +35,9 @@
           <!-- aggregated reports for multi-module projects -->
           <aggregate>true</aggregate>
           <instrumentation>
-            <excludes>
-              <exclude>src/main/java/AppModule.class</exclude>
-              <exclude>src/main/java/Program.class</exclude>
-            </excludes>
+           <ignoreMethodAnnotations>
+               <ignoreMethodAnnotation>lib.interfaci.CoverageIgnore</ignoreMethodAnnotation>
+            </ignoreMethodAnnotations>
           </instrumentation>
         </configuration>
       </plugin>
