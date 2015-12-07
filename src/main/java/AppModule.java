@@ -20,8 +20,5 @@ public class AppModule extends AbstractModule {
         bind(IGameLogicStrategyResolver.class).to(GameLogicStrategyResolver.class);
 
         bind(Game.class).to(Game.class);
-
-        /*Injector injector = Guice.createInjector(new AppModule());
-         Game game  = injector.getInstance(Game.class);*/
     }
 }
