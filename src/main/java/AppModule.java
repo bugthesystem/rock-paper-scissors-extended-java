@@ -7,7 +7,7 @@ import lib.interfaci.IPlayerFactory;
 import lib.interfaci.IUserWeaponChoiceProvider;
 
 public class AppModule extends AbstractModule {
-
+    @CoverageIgnore
     @Override
     protected void configure() {
 
