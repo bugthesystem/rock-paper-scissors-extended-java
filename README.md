@@ -13,3 +13,6 @@ Simple game that I have developed to use java (best) practices
 
 [AssertJ](http://joel-costigliola.github.io/assertj/)
 >Fluent assertions for java
+
+[Cobertura](http://cobertura.github.io/cobertura/)
+>A code coverage utility for Java.
