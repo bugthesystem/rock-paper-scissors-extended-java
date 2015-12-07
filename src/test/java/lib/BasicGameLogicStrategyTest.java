@@ -21,6 +21,14 @@ public class BasicGameLogicStrategyTest {
     }
 
     @Test
+    public void testAddPlayers_should_throw() throws Exception {
+        assertThatThrownBy(() -> {
+            strategy.addWeapons("", "", "");
+        }).isInstanceOf(Exception.class)
+                .hasMessageContaining("Not implemented.");
+    }
+
+    @Test
     public void testCanBeat_throws_error_when_weapon1_is_empty() throws Exception {
         assertThatThrownBy(() -> {
             strategy.canBeat("", "weapon2");

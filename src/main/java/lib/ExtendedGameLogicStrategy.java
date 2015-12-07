@@ -1,13 +1,9 @@
 package lib;
 
-import lib.interfaci.IHasAdditionalWeaponsSupport;
-
 import java.util.Map;
 
-public class ExtendedGameLogicStrategy
-        extends BasicGameLogicStrategy
-        implements IHasAdditionalWeaponsSupport {
-
+public class ExtendedGameLogicStrategy extends BasicGameLogicStrategy {
+    @Override
     public void addWeapons(String beater, String beaten, String beaterExistingWeapon) throws Exception {
 
         if (beaten.isEmpty() || beater.isEmpty() || beaterExistingWeapon.isEmpty()) {
