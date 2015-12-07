@@ -18,10 +18,6 @@ public class BasicGameLogicStrategy implements IGameLogicStrategy {
         weaponDict.put("paper", 3);
     }
 
-    public void addPlayers(String beater, String beaten, String beaterExistingWeapon) throws Exception {
-        throw new Exception("Not implemented.");
-    }
-
     private void assertWeaponExists(String weapon) throws Exception {
         if (!weaponDict.containsKey(weapon)) {
             throw new Exception("Invalid weapon " + weapon);

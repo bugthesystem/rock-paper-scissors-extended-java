@@ -30,7 +30,7 @@ public class Program {
 
         game.addPlayer(PlayerType.ComputerPlayer);
         game.addPlayer(PlayerType.UserPlayer);
-//        game.addPlayer(PlayerType.ComputerPlayer);
+        //game.addPlayer(PlayerType.ComputerPlayer);
 
         try {
             ArrayList<MatchResult> results = game.play();

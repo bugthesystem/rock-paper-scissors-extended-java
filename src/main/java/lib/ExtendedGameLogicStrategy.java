@@ -1,11 +1,14 @@
 package lib;
 
+import lib.interfaci.IHasAdditionalWeaponsSupport;
+
 import java.util.Map;
 
-public class ExtendedGameLogicStrategy extends BasicGameLogicStrategy {
+public class ExtendedGameLogicStrategy
+        extends BasicGameLogicStrategy
+        implements IHasAdditionalWeaponsSupport {
 
-    @Override
-    public void addPlayers(String beater, String beaten, String beaterExistingWeapon) throws Exception {
+    public void addWeapons(String beater, String beaten, String beaterExistingWeapon) throws Exception {
 
         if (beaten.isEmpty() || beater.isEmpty() || beaterExistingWeapon.isEmpty()) {
             throw new Exception("Given additional weapon parameters are invalid.");
