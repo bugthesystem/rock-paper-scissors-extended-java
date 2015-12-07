@@ -1,8 +1,5 @@
 import lib.*;
-import lib.interfaci.IGameLogicStrategy;
-import lib.interfaci.IGameLogicStrategyResolver;
-import lib.interfaci.IPlayerFactory;
-import lib.interfaci.IRandomProvider;
+import lib.interfaci.*;
 import lib.models.MatchResult;
 import lib.models.PlayerChoice;
 

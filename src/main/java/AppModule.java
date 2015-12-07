@@ -1,10 +1,7 @@
 import com.google.inject.AbstractModule;
 import com.google.inject.multibindings.Multibinder;
 import lib.*;
-import lib.interfaci.IGameLogicStrategy;
-import lib.interfaci.IGameLogicStrategyResolver;
-import lib.interfaci.IPlayerFactory;
-import lib.interfaci.IUserWeaponChoiceProvider;
+import lib.interfaci.*;
 
 public class AppModule extends AbstractModule {
     @CoverageIgnore
