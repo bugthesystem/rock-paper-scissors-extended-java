@@ -25,7 +25,7 @@ public class BasicGameLogicStrategyTest {
         assertThatThrownBy(() -> {
             strategy.addWeapons("", "", "");
         }).isInstanceOf(Exception.class)
-                .hasMessageContaining("Not implemented.");
+                .hasMessageContaining("This operation doesn't supported in this strategy.");
     }
 
     @Test

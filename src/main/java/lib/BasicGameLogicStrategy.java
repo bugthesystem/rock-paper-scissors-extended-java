@@ -19,7 +19,7 @@ public class BasicGameLogicStrategy implements IGameLogicStrategy {
     }
 
     public void addWeapons(String beater, String beaten, String beaterExistingWeapon) throws Exception {
-        throw new Exception("Not implemented.");
+        throw new Exception("This operation doesn't supported in this strategy.");
     }
 
     private void assertWeaponExists(String weapon) throws Exception {

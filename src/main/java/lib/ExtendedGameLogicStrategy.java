@@ -19,7 +19,6 @@ public class ExtendedGameLogicStrategy extends BasicGameLogicStrategy {
         for (Map.Entry<String, Integer> entry : this.weaponDict.entrySet()) {
             int currentWeaponId = entry.getValue();
             if (!beaterExistingWeapon.equals(entry.getKey())) {
-                //TODO: concurrency
                 this.weaponDict.put(entry.getKey(), currentWeaponId + 2);
             } else beaterExistingWeaponId = currentWeaponId;
         }
