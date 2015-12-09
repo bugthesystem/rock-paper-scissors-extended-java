@@ -36,8 +36,8 @@
           <aggregate>true</aggregate>
           <instrumentation>
             <excludes>
-              <exclude>src/main/java/AppModule.class</exclude>
-              <exclude>src/main/java/Program.class</exclude>
+              <exclude>src/main/java/app.AppModule.class</exclude>
+              <exclude>src/main/java/app.Program.class</exclude>
             </excludes>
           </instrumentation>
         </configuration>

@@ -1,3 +1,5 @@
+package app;
+
 import com.google.inject.AbstractModule;
 import com.google.inject.multibindings.Multibinder;
 import lib.*;
@@ -21,7 +23,7 @@ public class AppModule extends AbstractModule {
 
         bind(Game.class).to(Game.class);
 
-        /*Injector injector = Guice.createInjector(new AppModule());
+        /*Injector injector = Guice.createInjector(new app.AppModule());
          Game game  = injector.getInstance(Game.class);*/
     }
 }
