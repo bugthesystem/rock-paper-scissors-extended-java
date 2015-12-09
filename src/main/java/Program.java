@@ -11,9 +11,10 @@ public class Program {
     @CoverageIgnore
     public static void main(String[] arguments) throws Exception {
 
+        IWeaponStorage weaponStorage = new WeaponStorage();
         Set<IGameLogicStrategy> strategies = new HashSet<IGameLogicStrategy>();
-        strategies.add(new BasicGameLogicStrategy());
-        strategies.add(new ExtendedGameLogicStrategy());
+        strategies.add(new BasicGameLogicStrategy(weaponStorage));
+        strategies.add(new ExtendedGameLogicStrategy(weaponStorage));
 
         IGameLogicStrategyResolver strategyResolver = new GameLogicStrategyResolver(strategies);
 
