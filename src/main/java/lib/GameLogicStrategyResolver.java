@@ -15,24 +15,22 @@ public class GameLogicStrategyResolver implements IGameLogicStrategyResolver {
         this.strategies = strategies;
     }
 
-    public IGameLogicStrategy resolve(String name) throws Exception {
+    public IGameLogicStrategy resolve(StrategyType strategyType) throws Exception {
 
-        if (name.isEmpty()) {
-            throw new InvalidParameterException("Name must be not empty.");
+        if (strategyType == null) {
+            throw new InvalidParameterException("strategyType must be not null.");
         }
 
         if (strategies.isEmpty()) {
             throw new Exception("There is no strategy has registered.");
         }
 
-        IGameLogicStrategy result = null;
         for (IGameLogicStrategy strategy : this.strategies) {
-            if (strategy.getName().equals(name)) {
-                result = strategy;
-                break;
+            if (strategy.getStrategyType().equals(strategyType)) {
+                return strategy;
             }
         }
 
-        return result;
+        return null;
     }
 }

@@ -11,7 +11,6 @@ public class BasicGameLogicStrategy implements IGameLogicStrategy {
     private IWeaponStorage weaponStorage;
 
     public BasicGameLogicStrategy(IWeaponStorage weaponStorage) {
-
         this.weaponStorage = weaponStorage;
     }
 
@@ -59,7 +58,7 @@ public class BasicGameLogicStrategy implements IGameLogicStrategy {
         return weaponStorage.getWeaponNames();
     }
 
-    public String getName() {
-        return "Basic";
+    public StrategyType getStrategyType() {
+        return StrategyType.Basic;
     }
 }

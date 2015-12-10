@@ -1,7 +1,7 @@
 package lib;
 
-import lib.interfaci.IGameLogicStrategy;
 import lib.interfaci.IUserWeaponChoiceProvider;
+import lib.interfaci.IWeaponStorage;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -25,11 +25,11 @@ public class UserWeaponChoiceProviderTest {
     IUserWeaponChoiceProvider provider;
 
     @Mock
-    IGameLogicStrategy gameLogicStrategyMock;
+    IWeaponStorage weaponStorageMock;
 
     @Before
     public void setUp() throws Exception {
-        provider = new UserWeaponChoiceProvider(gameLogicStrategyMock);
+        provider = new UserWeaponChoiceProvider(weaponStorageMock);
     }
 
     @Test
@@ -44,13 +44,13 @@ public class UserWeaponChoiceProviderTest {
         weapons.add("b");
         weapons.add("c");
 
-        when(gameLogicStrategyMock.getWeapons()).thenReturn(weapons);
+        when(weaponStorageMock.getWeaponNames()).thenReturn(weapons);
 
         String input = provider.getInput();
 
         assertThat(weapons).contains(input);
 
-        verify(gameLogicStrategyMock).getWeapons();
+        verify(weaponStorageMock).getWeaponNames();
 
         System.setIn(original);
     }
@@ -68,13 +68,13 @@ public class UserWeaponChoiceProviderTest {
         weapons.add("b");
         weapons.add("c");
 
-        when(gameLogicStrategyMock.getWeapons()).thenReturn(weapons);
+        when(weaponStorageMock.getWeaponNames()).thenReturn(weapons);
 
         String input = provider.getInput();
 
         assertThat(input).isEqualTo(defaultWeapon);
 
-        verify(gameLogicStrategyMock).getWeapons();
+        verify(weaponStorageMock).getWeaponNames();
 
         System.setIn(original);
     }
@@ -96,7 +96,7 @@ public class UserWeaponChoiceProviderTest {
         weapons.add("b");
         weapons.add("c");
 
-        when(gameLogicStrategyMock.getWeapons()).thenReturn(weapons);
+        when(weaponStorageMock.getWeaponNames()).thenReturn(weapons);
 
         String input = provider.getInput();
 
@@ -104,7 +104,7 @@ public class UserWeaponChoiceProviderTest {
         assertThat(expectedMessage)
                 .isEqualTo(outContent.toString());
 
-        verify(gameLogicStrategyMock).getWeapons();
+        verify(weaponStorageMock).getWeaponNames();
     }
 
     @Test
@@ -120,12 +120,12 @@ public class UserWeaponChoiceProviderTest {
         weapons.add("c");
         weapons.add("");
 
-        when(gameLogicStrategyMock.getWeapons()).thenReturn(weapons);
+        when(weaponStorageMock.getWeaponNames()).thenReturn(weapons);
 
         String input = provider.getInput();
 
         assertThat(input).isEqualTo(defaultWeapon);
 
-        verify(gameLogicStrategyMock).getWeapons();
+        verify(weaponStorageMock).getWeaponNames();
     }
 }

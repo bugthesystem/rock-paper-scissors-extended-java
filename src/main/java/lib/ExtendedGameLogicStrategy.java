@@ -26,7 +26,7 @@ public class ExtendedGameLogicStrategy extends BasicGameLogicStrategy {
         int beaterExistingWeaponId = 0;
 
         HashMap<String, Integer> weapons = this.weaponStorage.getWeapons();
-        //TODO:
+
         for (Map.Entry<String, Integer> entry : weapons.entrySet()) {
             int currentWeaponId = entry.getValue();
             if (!beaterExistingWeapon.equals(entry.getKey())) {
@@ -34,13 +34,12 @@ public class ExtendedGameLogicStrategy extends BasicGameLogicStrategy {
             } else beaterExistingWeaponId = currentWeaponId;
         }
 
-
         this.weaponStorage.put(beater, beaterExistingWeaponId + 1);
         this.weaponStorage.put(beaten, beaterExistingWeaponId + 2);
     }
 
-    public String getName() {
-        return "Extended";
+    public StrategyType getStrategyType() {
+        return StrategyType.Extended;
     }
 
 }

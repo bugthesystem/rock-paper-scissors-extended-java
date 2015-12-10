@@ -99,7 +99,7 @@ public class ExtendedGameLogicStrategyTest {
     public void testGetName() throws Exception {
 
         String expectedName = "Extended";
-        String actual = strategy.getName();
+        String actual = strategy.getStrategyType().toString();
 
         assertThat(actual).isEqualTo(expectedName);
     }

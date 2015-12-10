@@ -1,5 +1,7 @@
 package lib.interfaci;
 
+import lib.StrategyType;
+
 import java.util.Set;
 
 public interface IGameLogicStrategy {
@@ -10,6 +12,6 @@ public interface IGameLogicStrategy {
 
     Set<String> getWeapons();
 
-    String getName();
+    StrategyType getStrategyType();
 }
 

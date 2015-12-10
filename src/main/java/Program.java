@@ -18,9 +18,9 @@ public class Program {
 
         IGameLogicStrategyResolver strategyResolver = new GameLogicStrategyResolver(strategies);
 
-        IGameLogicStrategy currentStrategy = strategyResolver.resolve("Basic");
+        IGameLogicStrategy currentStrategy = strategyResolver.resolve(StrategyType.Basic);
 
-        UserWeaponChoiceProvider userWeaponChoiceProvider = new UserWeaponChoiceProvider(currentStrategy);
+        UserWeaponChoiceProvider userWeaponChoiceProvider = new UserWeaponChoiceProvider(weaponStorage);
         IRandomProvider randomProvider = new RandomProvider();
 
         IPlayerFactory playerFactory = new PlayerFactory(currentStrategy, userWeaponChoiceProvider, randomProvider);

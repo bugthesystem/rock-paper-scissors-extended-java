@@ -81,7 +81,7 @@ public class BasicGameLogicStrategyTest {
         when(weaponStorageMock.get(scissors)).thenReturn(scissorsId);
         when(weaponStorageMock.get(rock)).thenReturn(rockId);
 
-        int beat = strategy.canBeat(rock,scissors);
+        int beat = strategy.canBeat(rock, scissors);
 
         assertThat(beat).isEqualTo(1);
 
@@ -188,7 +188,7 @@ public class BasicGameLogicStrategyTest {
     @Test
     public void testGetName() throws Exception {
         String expected = "Basic";
-        String actual = strategy.getName();
+        String actual = strategy.getStrategyType().toString();
 
         assertThat(actual).isEqualTo(expected);
     }
