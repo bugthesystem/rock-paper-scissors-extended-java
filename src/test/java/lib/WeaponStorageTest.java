@@ -64,11 +64,12 @@ public class WeaponStorageTest {
     public void testPut() throws Exception {
         String test = "PUT";
         int value = 666;
-        weaponStorage.put(test, value);
+        Integer putResult = weaponStorage.put(test, value);
 
         int result = weaponStorage.get(test);
 
         assertThat(result).isEqualTo(value);
+        assertThat(putResult).isNull();
         assertThat(weaponStorage.getWeapons().size()).isEqualTo(4);
     }
 }

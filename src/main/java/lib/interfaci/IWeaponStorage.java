@@ -13,5 +13,5 @@ public interface IWeaponStorage {
 
     int get(String weapon);
 
-    void put(String key, int id);
+    Integer put(String key, int id);
 }

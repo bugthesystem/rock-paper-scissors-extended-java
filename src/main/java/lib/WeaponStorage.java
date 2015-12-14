@@ -43,7 +43,7 @@ public class WeaponStorage implements IWeaponStorage {
     }
 
     @Override
-    public void put(String key, int id) {
-        weaponDict.put(key, id);
+    public Integer put(String key, int id) {
+        return weaponDict.put(key, id);
     }
 }
