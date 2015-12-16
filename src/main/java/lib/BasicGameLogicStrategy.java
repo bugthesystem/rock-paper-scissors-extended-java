@@ -1,30 +1,26 @@
 package lib;
 
 import lib.interfaci.IGameLogicStrategy;
+import lib.interfaci.IWeaponStorage;
 
 import java.security.InvalidParameterException;
-import java.util.HashMap;
 import java.util.Set;
 
 public class BasicGameLogicStrategy implements IGameLogicStrategy {
 
-    HashMap<String, Integer> weaponDict;
+    private IWeaponStorage weaponStorage;
 
-    public BasicGameLogicStrategy() {
-        weaponDict = new HashMap<String, Integer>();
-
-        weaponDict.put("rock", 1);
-        weaponDict.put("scissors", 2);
-        weaponDict.put("paper", 3);
+    public BasicGameLogicStrategy(IWeaponStorage weaponStorage) {
+        this.weaponStorage = weaponStorage;
     }
 
     public void addWeapons(String beater, String beaten, String beaterExistingWeapon) throws Exception {
         throw new Exception("This operation doesn't supported in this strategy.");
     }
 
-    private void assertWeaponExists(String weapon) throws Exception {
-        if (!weaponDict.containsKey(weapon)) {
-            throw new Exception("Invalid weapon " + weapon);
+    private void assertWeaponExists(int weapon, String name) throws Exception {
+        if (weapon == -1) {
+            throw new Exception("Invalid weapon " + name);
         }
     }
 
@@ -38,11 +34,11 @@ public class BasicGameLogicStrategy implements IGameLogicStrategy {
             throw new InvalidParameterException("weapon2 must be not empty.");
         }
 
-        this.assertWeaponExists(weapon1);
-        this.assertWeaponExists(weapon2);
+        int weapon1Id = weaponStorage.get(weapon1);
+        int weapon2Id = weaponStorage.get(weapon2);
 
-        int weapon1Id = weaponDict.get(weapon1);
-        int weapon2Id = weaponDict.get(weapon2);
+        this.assertWeaponExists(weapon1Id, weapon1);
+        this.assertWeaponExists(weapon2Id, weapon2);
 
         int difference = weapon2Id - weapon1Id;
 
@@ -59,10 +55,10 @@ public class BasicGameLogicStrategy implements IGameLogicStrategy {
     }
 
     public Set<String> getWeapons() {
-        return weaponDict.keySet();
+        return weaponStorage.getWeaponNames();
     }
 
-    public String getName() {
-        return "Basic";
+    public StrategyType getStrategyType() {
+        return StrategyType.Basic;
     }
 }

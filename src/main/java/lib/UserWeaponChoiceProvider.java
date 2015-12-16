@@ -1,28 +1,28 @@
 package lib;
 
+import com.google.common.collect.Multiset;
 import com.google.inject.Inject;
 import lib.interfaci.IGameLogicStrategy;
 import lib.interfaci.IUserWeaponChoiceProvider;
+import lib.interfaci.IWeaponStorage;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class UserWeaponChoiceProvider implements IUserWeaponChoiceProvider {
 
     static final String DEFAULT_WEAPON = "paper";
-    private IGameLogicStrategy gameLogicStrategy;
+    private IWeaponStorage weaponStorage;
 
     @Inject
-    public UserWeaponChoiceProvider(IGameLogicStrategy gameLogicStrategy) {
-        this.gameLogicStrategy = gameLogicStrategy;
+    public UserWeaponChoiceProvider(IWeaponStorage weaponStorage) {
+        this.weaponStorage = weaponStorage;
     }
 
     public String getInput() {
 
         List<String> weapons = new ArrayList<String>();
 
-        Object[] array = this.gameLogicStrategy.getWeapons().toArray();
+        Object[] array = this.weaponStorage.getWeaponNames().toArray();
 
         for (int i = 0; i < array.length; i++) {
             weapons.add(String.format("%s(%d)", array[i], i));

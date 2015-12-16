@@ -1,6 +1,8 @@
 package lib.interfaci;
 
+import lib.StrategyType;
+
 public interface IGameLogicStrategyResolver {
 
-    IGameLogicStrategy resolve(String name) throws Exception;
+    IGameLogicStrategy resolve(StrategyType strategyType) throws Exception;
 }

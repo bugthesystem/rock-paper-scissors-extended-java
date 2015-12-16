@@ -37,52 +37,55 @@ public class GameLogicStrategyResolverTest {
     public void testResolve_should_throw_InvalidParameterException_strategy_name_is_empty() throws Exception {
 
         assertThatThrownBy(() -> {
-            strategyResolver.resolve("");
+            strategyResolver.resolve(null);
         })
                 .isInstanceOf(InvalidParameterException.class)
-                .hasMessageContaining("Name must be not empty.");
-    }
-
-    @Test
-    public void testResolve_should_fail_when_strategies_empty() throws Exception {
-        assertThatThrownBy(() -> {
-            strategyResolver.resolve("test");
-        })
-                .isInstanceOf(Exception.class)
-                .hasMessageContaining("There is no strategy has registered.");
-    }
-
-    @Test
-    public void testResolve_should_return_null_when_strategy_not_found() throws Exception {
-
-        String strategyName = "basic";
-
-        strategies.add(gameLogicStrategyMock);
-
-        when(gameLogicStrategyMock.getName()).thenReturn(strategyName);
-
-        IGameLogicStrategy strategy = strategyResolver.resolve("test");
-
-        assertThat(strategy).isNull();
-
-        verify(gameLogicStrategyMock, times(1)).getName();
+                .hasMessageContaining("strategyType must be not null.");
     }
 
     @Test
     public void testResolve() throws Exception {
 
-        String strategyName = "basic";
+        StrategyType strategyType = StrategyType.Basic;
 
         strategies.add(gameLogicStrategyMock);
 
-        when(gameLogicStrategyMock.getName()).thenReturn(strategyName);
+        when(gameLogicStrategyMock.getStrategyType()).thenReturn(strategyType);
 
-        IGameLogicStrategy strategy = strategyResolver.resolve(strategyName);
+        IGameLogicStrategy strategy = strategyResolver.resolve(strategyType);
 
         assertThat(strategy).isNotNull();
 
-        verify(gameLogicStrategyMock, times(1)).getName();
+        verify(gameLogicStrategyMock, times(1)).getStrategyType();
 
-        assertThat(strategy.getName()).isEqualTo(strategyName);
+        assertThat(strategy.getStrategyType()).isEqualTo(strategyType);
+    }
+
+    @Test
+    public void testResolve_throws_Exception_when_strategies_is_empty() throws Exception {
+
+        strategies = new HashSet<>();
+        strategyResolver = new GameLogicStrategyResolver(strategies);
+        assertThatThrownBy(() -> {
+            strategyResolver.resolve(StrategyType.Basic);
+        })
+                .isInstanceOf(Exception.class)
+                .hasMessageContaining("There is no strategy has registered.");
+
+
+    }
+
+    @Test
+    public void testResolve_returns_null_when_strategy_not_found() throws Exception {
+
+        strategies = new HashSet<>();
+        strategies.add(gameLogicStrategyMock);
+        strategyResolver = new GameLogicStrategyResolver(strategies);
+
+        when(gameLogicStrategyMock.getStrategyType()).thenReturn(StrategyType.Basic);
+
+        IGameLogicStrategy result = strategyResolver.resolve(StrategyType.Extended);
+
+        assertThat(result).isNull();
     }
 }
