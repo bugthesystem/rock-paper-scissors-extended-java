@@ -1,4 +1,4 @@
-package app;
+package ui;
 
 import lib.models.MatchResult;
 

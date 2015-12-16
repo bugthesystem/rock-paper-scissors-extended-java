@@ -1,38 +1,42 @@
-package app;
+package ui;
 
 import lib.*;
-import lib.interfaci.IGameLogicStrategy;
-import lib.interfaci.IGameLogicStrategyResolver;
-import lib.interfaci.IPlayerFactory;
-import lib.interfaci.IRandomProvider;
+import lib.interfaci.*;
 import lib.models.MatchResult;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Presenter {
+public class Presenter implements IPresenter {
     private IView view;
+    IPlayerFactory playerFactory;
+    UserWeaponChoiceProvider userWeaponChoiceProvider;
+    IRandomProvider randomProvider;
+    IGameLogicStrategyResolver strategyResolver;
 
     public Presenter(IView view) {
 
         this.view = view;
+        IWeaponStorage weaponStorage = new WeaponStorage();
 
         Set<IGameLogicStrategy> strategies = new HashSet<IGameLogicStrategy>();
-        strategies.add(new BasicGameLogicStrategy());
-        strategies.add(new ExtendedGameLogicStrategy());
+        strategies.add(new BasicGameLogicStrategy(weaponStorage));
+        strategies.add(new ExtendedGameLogicStrategy(weaponStorage));
 
-        IGameLogicStrategyResolver strategyResolver = new GameLogicStrategyResolver(strategies);
+        strategyResolver = new GameLogicStrategyResolver(strategies);
+        userWeaponChoiceProvider = new UserWeaponChoiceProvider(weaponStorage);
+        randomProvider = new RandomProvider();
+    }
 
+    @Override
+    public void init() {
         IGameLogicStrategy currentStrategy = null;
         try {
-            currentStrategy = strategyResolver.resolve("Basic");
+            currentStrategy = strategyResolver.resolve(StrategyType.Basic);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        UserWeaponChoiceProvider userWeaponChoiceProvider = new UserWeaponChoiceProvider(currentStrategy);
-        IRandomProvider randomProvider = new RandomProvider();
 
         IPlayerFactory playerFactory = new PlayerFactory(currentStrategy, userWeaponChoiceProvider, randomProvider);
 

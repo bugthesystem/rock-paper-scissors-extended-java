@@ -15,6 +15,7 @@ public class Game {
     List<IPlayer> players;
     private IPlayerFactory playerFactory;
     private IGameLogicStrategy gameLogicStrategy;
+
     @Inject
     public Game(IPlayerFactory playerFactory, IGameLogicStrategy gameLogicStrategy) {
         this.playerFactory = playerFactory;
@@ -38,7 +39,6 @@ public class Game {
             playerChoices.add(new PlayerChoice(player.getName(), choice));
         }
 
-        System.out.println("Game has started.");
         return this.executeRules(playerChoices);
     }
 

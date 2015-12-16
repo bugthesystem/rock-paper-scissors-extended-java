@@ -1,4 +1,4 @@
-package app;
+package ui;
 
 import lib.models.MatchResult;
 import lib.models.PlayerChoice;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 public class View implements IView {
 
-    Presenter presenter;
+    IPresenter presenter;
 
     public View() {
         this.presenter = new Presenter(this);
