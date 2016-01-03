@@ -1,6 +1,6 @@
 package lib;
 
-import lib.interfaci.IUserWeaponChoiceProvider;
+import lib.impl.UserPlayer;
 import lib.models.Player;
 import org.junit.Before;
 import org.junit.Test;

@@ -1,13 +1,11 @@
-import lib.interfaci.CoverageIgnore;
 import ui.IPresenter;
 import ui.IView;
 import ui.Presenter;
-import ui.View;
+import ui.ConsoleView;
 
 public class Main {
-    @CoverageIgnore
     public static void main(String[] arguments) throws Exception {
-        IView view = new View();
+        IView view = new ConsoleView();
         IPresenter presenter = new Presenter(view);
         presenter.init();
     }

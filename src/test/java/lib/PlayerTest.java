@@ -1,7 +1,6 @@
 package lib;
 
-import lib.interfaci.IGameLogicStrategy;
-import lib.interfaci.IRandomProvider;
+import lib.impl.ComputerPlayer;
 import lib.models.Player;
 import org.junit.Before;
 import org.junit.Test;

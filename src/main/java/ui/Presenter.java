@@ -1,7 +1,7 @@
 package ui;
 
 import lib.*;
-import lib.interfaci.*;
+import lib.impl.*;
 import lib.models.MatchResult;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class Presenter implements IPresenter {
 
         IPlayerFactory playerFactory = new PlayerFactory(currentStrategy, userWeaponChoiceProvider, randomProvider);
 
-        Game game = new Game(playerFactory, currentStrategy);
+        IGame game = new Game(playerFactory, currentStrategy);
 
         game.addPlayer(PlayerType.ComputerPlayer);
         game.addPlayer(PlayerType.UserPlayer);

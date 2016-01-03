@@ -2,8 +2,8 @@ package lib.impl;
 
 import com.google.inject.Inject;
 import lib.StrategyType;
-import lib.impl.IGameLogicStrategy;
-import lib.impl.IGameLogicStrategyResolver;
+import lib.IGameLogicStrategy;
+import lib.IGameLogicStrategyResolver;
 
 import java.security.InvalidParameterException;
 import java.util.Set;

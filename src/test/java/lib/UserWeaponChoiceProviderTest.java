@@ -1,7 +1,6 @@
 package lib;
 
-import lib.interfaci.IUserWeaponChoiceProvider;
-import lib.interfaci.IWeaponStorage;
+import lib.impl.UserWeaponChoiceProvider;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

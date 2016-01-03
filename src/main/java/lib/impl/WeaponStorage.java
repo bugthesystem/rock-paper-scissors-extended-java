@@ -1,6 +1,6 @@
 package lib.impl;
 
-import lib.impl.IWeaponStorage;
+import lib.IWeaponStorage;
 
 import java.util.HashMap;
 import java.util.Set;

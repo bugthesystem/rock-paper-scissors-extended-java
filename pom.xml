@@ -36,7 +36,8 @@
                     <aggregate>true</aggregate>
                     <instrumentation>
                         <excludes>
-                            <exclude>**/Program.class</exclude>
+                            <exclude>**/Main.class</exclude>
+                            <exclude>**/ui/*.class</exclude>
                         </excludes>
                     </instrumentation>
                 </configuration>

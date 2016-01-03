@@ -1,7 +1,6 @@
 package lib;
 
-import lib.interfaci.IGameLogicStrategy;
-import lib.interfaci.IWeaponStorage;
+import lib.impl.ExtendedGameLogicStrategy;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

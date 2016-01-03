@@ -1,7 +1,6 @@
 package lib;
 
-import lib.interfaci.IGameLogicStrategy;
-import lib.interfaci.IGameLogicStrategyResolver;
+import lib.impl.GameLogicStrategyResolver;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

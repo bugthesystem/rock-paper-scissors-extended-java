@@ -1,6 +1,6 @@
 package lib;
 
-import lib.interfaci.*;
+import lib.impl.*;
 import lib.models.MatchResult;
 import org.junit.Before;
 import org.junit.Test;
@@ -20,7 +20,7 @@ import static org.mockito.Mockito.*;
 @RunWith(MockitoJUnitRunner.class)
 public class GameTest {
 
-    Game game;
+    IGame game;
 
     @Mock
     IPlayerFactory playerFactoryMock;

@@ -1,6 +1,6 @@
 package lib;
 
-import lib.interfaci.IRandomProvider;
+import lib.impl.RandomProvider;
 import org.junit.Before;
 import org.junit.Test;
 

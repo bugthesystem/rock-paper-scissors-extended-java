@@ -1,7 +1,7 @@
 package lib.impl;
 
-import lib.impl.IGameLogicStrategy;
-import lib.impl.IRandomProvider;
+import lib.IGameLogicStrategy;
+import lib.IRandomProvider;
 import lib.models.Player;
 
 import java.util.Set;

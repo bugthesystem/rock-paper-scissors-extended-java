@@ -1,6 +1,6 @@
 package lib.impl;
 
-import lib.impl.IRandomProvider;
+import lib.IRandomProvider;
 
 public class RandomProvider implements IRandomProvider {
     public int randomize(int max) {

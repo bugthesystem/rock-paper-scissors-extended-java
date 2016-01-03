@@ -6,9 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by ziyasal on 16.12.2015.
- */
+
 public class PresenterTest {
 
     @Before

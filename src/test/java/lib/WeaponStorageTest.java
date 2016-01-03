@@ -1,6 +1,6 @@
 package lib;
 
-import lib.interfaci.IWeaponStorage;
+import lib.impl.WeaponStorage;
 import org.junit.Before;
 import org.junit.Test;
 

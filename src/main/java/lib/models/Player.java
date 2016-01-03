@@ -1,6 +1,6 @@
 package lib.models;
 
-import lib.interfaci.IPlayer;
+import lib.IPlayer;
 
 public abstract class Player implements IPlayer {
 

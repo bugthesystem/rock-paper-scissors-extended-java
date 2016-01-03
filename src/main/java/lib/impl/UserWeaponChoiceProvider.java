@@ -1,8 +1,8 @@
 package lib.impl;
 
 import com.google.inject.Inject;
-import lib.impl.IUserWeaponChoiceProvider;
-import lib.impl.IWeaponStorage;
+import lib.IUserWeaponChoiceProvider;
+import lib.IWeaponStorage;
 
 import java.util.*;
 
