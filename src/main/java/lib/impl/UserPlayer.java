@@ -1,6 +1,6 @@
-package lib;
+package lib.impl;
 
-import lib.interfaci.IUserWeaponChoiceProvider;
+import lib.impl.IUserWeaponChoiceProvider;
 import lib.models.Player;
 
 public class UserPlayer extends Player {

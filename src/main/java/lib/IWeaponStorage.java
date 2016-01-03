@@ -1,4 +1,4 @@
-package lib.interfaci;
+package lib;
 
 import java.util.HashMap;
 import java.util.Set;

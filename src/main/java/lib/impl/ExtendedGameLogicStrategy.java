@@ -1,6 +1,6 @@
-package lib;
+package lib.impl;
 
-import lib.interfaci.IWeaponStorage;
+import lib.StrategyType;
 
 import java.util.HashMap;
 import java.util.Map;

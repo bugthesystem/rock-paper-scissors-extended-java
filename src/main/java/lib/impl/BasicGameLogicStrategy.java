@@ -1,7 +1,8 @@
-package lib;
+package lib.impl;
 
-import lib.interfaci.IGameLogicStrategy;
-import lib.interfaci.IWeaponStorage;
+import lib.StrategyType;
+import lib.IGameLogicStrategy;
+import lib.IWeaponStorage;
 
 import java.security.InvalidParameterException;
 import java.util.Set;

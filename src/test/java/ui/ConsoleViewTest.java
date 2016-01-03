@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 /**
  * Created by ziyasal on 16.12.2015.
  */
-public class ViewTest {
+public class ConsoleViewTest {
 
     @Before
     public void setUp() throws Exception {

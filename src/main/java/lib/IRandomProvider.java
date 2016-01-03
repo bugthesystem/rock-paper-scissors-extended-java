@@ -1,4 +1,4 @@
-package lib.interfaci;
+package lib;
 
 public interface IRandomProvider {
     int randomize(int max);

@@ -1,7 +1,6 @@
-package lib;
+package lib.impl;
 
 import com.google.inject.Inject;
-import lib.interfaci.*;
 
 import java.security.InvalidParameterException;
 

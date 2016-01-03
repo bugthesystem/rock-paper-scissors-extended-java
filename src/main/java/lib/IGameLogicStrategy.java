@@ -1,4 +1,4 @@
-package lib.interfaci;
+package lib;
 
 import lib.StrategyType;
 

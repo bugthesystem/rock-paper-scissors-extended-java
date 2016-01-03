@@ -1,6 +1,4 @@
-package lib.interfaci;
-
-import lib.StrategyType;
+package lib;
 
 public interface IGameLogicStrategyResolver {
 

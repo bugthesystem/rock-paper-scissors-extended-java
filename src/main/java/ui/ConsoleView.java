@@ -5,11 +5,11 @@ import lib.models.PlayerChoice;
 
 import java.util.ArrayList;
 
-public class View implements IView {
+public class ConsoleView implements IView {
 
     IPresenter presenter;
 
-    public View() {
+    public ConsoleView() {
         this.presenter = new Presenter(this);
     }
 

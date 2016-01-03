@@ -1,16 +1,14 @@
-package lib;
+package lib.impl;
 
 import com.google.inject.Inject;
-import lib.interfaci.IGameLogicStrategy;
-import lib.interfaci.IPlayer;
-import lib.interfaci.IPlayerFactory;
+import lib.*;
 import lib.models.MatchResult;
 import lib.models.PlayerChoice;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Game {
+public class Game implements IGame {
 
     List<IPlayer> players;
     private IPlayerFactory playerFactory;
@@ -23,10 +21,12 @@ public class Game {
         this.players = new ArrayList<IPlayer>();
     }
 
+    @Override
     public List<IPlayer> getPlayers() {
         return players;
     }
 
+    @Override
     public ArrayList<MatchResult> play() throws Exception {
 
         if (this.players.size() < 2) {
@@ -89,6 +89,7 @@ public class Game {
      *
      * @param playerType
      */
+    @Override
     public void addPlayer(PlayerType playerType) {
         switch (playerType) {
             case UserPlayer:
@@ -104,6 +105,7 @@ public class Game {
     /**
      * Clear game state.
      */
+    @Override
     public void clear() {
         this.players.clear();
     }
