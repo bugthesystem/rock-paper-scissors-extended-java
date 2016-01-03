@@ -35,11 +35,9 @@
                     <!-- aggregated reports for multi-module projects -->
                     <aggregate>true</aggregate>
                     <instrumentation>
-                        <ignoreMethodAnnotations>
-                            <excludes>
-                                <exclude>**/Program.class</exclude>
-                            </excludes>
-                        </ignoreMethodAnnotations>
+                        <excludes>
+                            <exclude>**/Program.class</exclude>
+                        </excludes>
                     </instrumentation>
                 </configuration>
             </plugin>
