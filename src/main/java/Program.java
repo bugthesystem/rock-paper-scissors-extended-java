@@ -8,7 +8,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Program {
-    @CoverageIgnore
     public static void main(String[] arguments) throws Exception {
 
         IWeaponStorage weaponStorage = new WeaponStorage();
