@@ -6,7 +6,7 @@ Rock, Paper, Scissors
 >Rock-paper-scissors is a zero sum hand game usually played between two people, in which each player simultaneously forms one of three shapes with an outstretched hand. 
 
 
-[![Build Status](https://travis-ci.org/ziyasal/rock-paper-scissors-extended-java.svg?branch=master)](https://travis-ci.org/ziyasal/rock-paper-scissors-extended-java)
+[![Build Status](https://travis-ci.org/ziyasal/rock-paper-scissors-extended-java.svg?branch=master)](https://travis-ci.org/ziyasal/rock-paper-scissors-extended-java) [![Coveralls](https://coveralls.io/repos/ziyasal/rospock/badge.svg?branch=master&service=github)](https://coveralls.io/github/ziyasal/rospock?branch=master)
 
 ##Tools
 
